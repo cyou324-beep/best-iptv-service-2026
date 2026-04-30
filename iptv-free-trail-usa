@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>StreamVault — Premium IPTV Free Trial 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --red: #e8001d;
+  --red-dim: #a0001580;
+  --red-glow: #e8001d40;
+  --gold: #c9a84c;
+  --gold-dim: #c9a84c30;
+  --bg: #060608;
+  --bg2: #0d0d10;
+  --bg3: #13131a;
+  --surface: #1a1a24;
+  --surface2: #22222e;
+  --text: #f0eee8;
+  --text-muted: #888898;
+  --text-dim: #555566;
+  --border: #ffffff0f;
+  --border-bright: #ffffff20;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  height: 68px;
+  background: linear-gradient(to bottom, rgba(6,6,8,.95) 0%, transparent 100%);
+  backdrop-filter: blur(0px);
+  transition: background .3s, backdrop-filter .3s;
+}
+nav.scrolled {
+  background: rgba(6,6,8,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-logo span {
+  color: var(--red);
+}
+.logo-dot {
+  width: 7px; height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 var(--red-glow); }
+  50% { opacity: .7; transform: scale(1.3); box-shadow: 0 0 0 5px transparent; }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: .83rem;
+  font-weight: 400;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+.nav-cta {
+  background: var(--red);
+  color: #fff !important;
+  padding: 9px 22px;
+  border-radius: 3px;
+  font-weight: 500 !important;
+  letter-spacing: .06em !important;
+  transition: background .2s, transform .15s !important;
+}
+.nav-cta:hover { background: #ff0022 !important; transform: translateY(-1px); }
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Cinematic background layers */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 65% 40%, #1a0510 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 20% 60%, #08040e 0%, transparent 50%),
+    var(--bg);
+}
+
+/* Animated scan lines */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,.012) 2px,
+    rgba(255,255,255,.012) 4px
+  );
+  pointer-events: none;
+}
+
+/* The fake "movie poster" panel on the right */
+.hero-visual {
+  position: absolute;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52%;
+  height: 88vh;
+  overflow: hidden;
+  border-radius: 8px 0 0 8px;
+}
+.hero-visual-inner {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(to right, var(--bg) 0%, transparent 30%),
+    linear-gradient(to top, var(--bg) 0%, transparent 25%),
+    linear-gradient(135deg, #1a0510 0%, #0d0818 40%, #060310 100%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 3px;
+  padding: 3px;
+  opacity: .7;
+}
+.channel-thumb {
+  background: var(--surface);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  animation: thumb-shimmer 4s infinite;
+}
+.channel-thumb:nth-child(2) { animation-delay: .3s; }
+.channel-thumb:nth-child(3) { animation-delay: .6s; }
+.channel-thumb:nth-child(4) { animation-delay: .9s; }
+.channel-thumb:nth-child(5) { animation-delay: 1.2s; }
+.channel-thumb:nth-child(6) { animation-delay: 1.5s; }
+.channel-thumb:nth-child(7) { animation-delay: .15s; }
+.channel-thumb:nth-child(8) { animation-delay: .75s; }
+.channel-thumb:nth-child(9) { animation-delay: 1.1s; }
+.channel-thumb:nth-child(10) { animation-delay: .4s; }
+.channel-thumb:nth-child(11) { animation-delay: .85s; }
+.channel-thumb:nth-child(12) { animation-delay: 1.35s; }
+@keyframes thumb-shimmer {
+  0%, 100% { background: var(--surface); }
+  50% { background: var(--surface2); }
+}
+.channel-thumb.live::before {
+  content: 'LIVE';
+  position: absolute;
+  top: 6px; left: 6px;
+  background: var(--red);
+  color: #fff;
+  font-size: .55rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+.channel-thumb .ch-icon {
+  font-size: 1.6rem;
+  opacity: .25;
+}
+.channel-thumb.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.channel-thumb.featured .ch-icon { font-size: 3rem; opacity: .2; }
+
+/* Vignette over the visual */
+.hero-vignette {
+  position: absolute;
+  right: 0; top: 0;
+  width: 52%;
+  height: 100%;
+  background: linear-gradient(to right, var(--bg) 0%, transparent 35%, transparent 70%, var(--bg) 100%);
+  pointer-events: none;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 0 3rem;
+  max-width: 620px;
+  animation: hero-in 1s ease both;
+}
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.4rem;
+  animation: hero-in 1s .1s ease both;
+}
+.eyebrow-line {
+  width: 32px;
+  height: 1px;
+  background: var(--red);
+}
+.eyebrow-text {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 7vw, 6.5rem);
+  line-height: .95;
+  letter-spacing: 1px;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  animation: hero-in 1s .15s ease both;
+}
+.hero-title em {
+  font-style: normal;
+  color: var(--red);
+  display: block;
+}
+.hero-title .outline-text {
+  -webkit-text-stroke: 1px rgba(240,238,232,.25);
+  color: transparent;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 460px;
+  margin-bottom: 2.2rem;
+  animation: hero-in 1s .2s ease both;
+}
+.hero-sub strong { color: var(--text); font-weight: 400; }
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  animation: hero-in 1s .28s ease both;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  font-weight: 500;
+  letter-spacing: .05em;
+  padding: 14px 28px;
+  border-radius: 3px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 0 30px var(--red-glow);
+}
+.btn-primary:hover {
+  background: #ff0022;
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px var(--red-dim);
+}
+.btn-primary svg { flex-shrink: 0; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  padding: 14px 0;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: color .2s;
+}
+.btn-secondary:hover { color: var(--text); }
+.play-icon {
+  width: 38px; height: 38px;
+  border: 1px solid var(--border-bright);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color .2s, background .2s;
+}
+.btn-secondary:hover .play-icon { border-color: var(--text); background: rgba(255,255,255,.05); }
+
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  animation: hero-in 1s .36s ease both;
+}
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.trust-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--text);
+  line-height: 1;
+}
+.trust-label {
+  font-size: .72rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.trust-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-bright);
+}
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  animation: hero-in 1s .5s ease both;
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: var(--border-bright);
+  position: relative;
+  overflow: hidden;
+}
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 30%;
+  background: var(--red);
+  animation: scroll-drop 2s infinite;
+}
+@keyframes scroll-drop {
+  from { top: -30%; }
+  to { top: 130%; }
+}
+.scroll-text {
+  font-size: .65rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  writing-mode: vertical-rl;
+}
+
+/* ══════════════════════════════════════
+   TICKER
+══════════════════════════════════════ */
+.ticker {
+  background: var(--red);
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  animation: ticker-scroll 28s linear infinite;
+}
+.ticker-inner:hover { animation-play-state: paused; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  margin-right: 3rem;
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.85);
+}
+.ticker-dot {
+  width: 4px; height: 4px;
+  background: rgba(255,255,255,.5);
+  border-radius: 50%;
+}
+
+/* ══════════════════════════════════════
+   FEATURES STRIP
+══════════════════════════════════════ */
+.features {
+  padding: 6rem 3rem;
+  position: relative;
+}
+.features::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 3rem;
+}
+.section-label-line {
+  width: 24px; height: 1px;
+  background: var(--red);
+}
+.section-label-text {
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.feature-item {
+  background: var(--bg);
+  padding: 2rem 1.8rem;
+  transition: background .2s;
+  position: relative;
+  overflow: hidden;
+}
+.feature-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+.feature-item:hover { background: var(--bg3); }
+.feature-item:hover::before { transform: scaleX(1); }
+
+.feature-icon {
+  width: 42px; height: 42px;
+  background: var(--surface);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--border-bright);
+}
+.feature-icon svg { color: var(--red); }
+.feature-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: .5px;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+.feature-desc {
+  font-size: .82rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════
+   PROVIDERS
+══════════════════════════════════════ */
+.providers {
+  padding: 5rem 3rem 6rem;
+  position: relative;
+}
+.providers::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 1px;
+  line-height: 1;
+  color: var(--text);
+}
+.section-title span { color: var(--red); }
+.section-link {
+  font-size: .78rem;
+  font-weight: 400;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-bright);
+  padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+  white-space: nowrap;
+}
+.section-link:hover { color: var(--text); border-color: var(--text-muted); }
+
+.providers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.provider-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+  cursor: pointer;
+}
+.provider-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-3px);
+}
+.provider-card.top {
+  border-color: var(--red-dim);
+}
+.provider-card.top:hover {
+  border-color: var(--red);
+}
+
+/* Subtle background glow for top card */
+.provider-card.top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #e8001d12, transparent 65%);
+  pointer-events: none;
+}
+
+.card-rank {
+  position: absolute;
+  top: -1px; right: 16px;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--border);
+  line-height: 1;
+  letter-spacing: -1px;
+  transition: color .2s;
+  user-select: none;
+}
+.provider-card.top .card-rank { color: var(--red-dim); }
+.provider-card:hover .card-rank { color: var(--border-bright); }
+
+.card-badge {
+  display: inline-block;
+  font-size: .62rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+.badge-top { background: var(--red); color: #fff; }
+.badge-vpn { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-dim); }
+.badge-value { background: var(--surface); color: var(--text-muted); border: 1px solid var(--border-bright); }
+
+.card-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: .5px;
+  color: var(--text);
+  margin-bottom: .3rem;
+}
+.card-tagline {
+  font-size: .8rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+.card-stats {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.3rem;
+}
+.stat {
+  font-size: .72rem;
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.stat strong { color: var(--text-muted); font-weight: 400; }
+
+.card-trial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+  margin-top: .5rem;
+}
+.trial-info {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text);
+  letter-spacing: .5px;
+}
+.trial-sub {
+  font-size: .68rem;
+  color: var(--text-dim);
+  margin-top: 1px;
+}
+.card-btn {
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 400;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.provider-card.top .card-btn {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+.card-btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+/* ══════════════════════════════════════
+   HOW IT WORKS
+══════════════════════════════════════ */
+.how {
+  padding: 5rem 3rem 6rem;
+  background: var(--bg2);
+  position: relative;
+}
+.how::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+}
+
+.steps-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0;
+  margin-top: 2rem;
+  position: relative;
+}
+.steps-row::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, var(--red-dim), var(--border-bright), var(--red-dim));
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem 0;
+  position: relative;
+}
+.step-num {
+  width: 56px; height: 56px;
+  border: 1px solid var(--border-bright);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  background: var(--bg2);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  transition: border-color .3s, color .3s;
+}
+.step:hover .step-num {
+  border-color: var(--red);
+  color: var(--red);
+  box-shadow: 0 0 20px var(--red-glow);
+}
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: .5px;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+.step-desc {
+  font-size: .78rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════
+   CTA SECTION
+══════════════════════════════════════ */
+.cta-section {
+  padding: 5rem 3rem 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+}
+.cta-bg-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 300px;
+  background: radial-gradient(ellipse, var(--red-glow), transparent 70%);
+  pointer-events: none;
+}
+
+.cta-eyebrow {
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.2rem;
+}
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  letter-spacing: 1px;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+.cta-title span { color: var(--red); }
+.cta-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.cta-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  padding: 14px 28px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 0 30px #25d36630;
+}
+.btn-wa:hover {
+  background: #22c05c;
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px #25d36640;
+}
+
+.cta-note {
+  font-size: .72rem;
+  color: var(--text-dim);
+  letter-spacing: .06em;
+}
+.cta-note span { color: var(--text-muted); }
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+}
+.footer-logo span { color: var(--red); }
+.footer-text {
+  font-size: .72rem;
+  color: var(--text-dim);
+  letter-spacing: .04em;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .hero-content { padding: 0 1.5rem; }
+  .hero-visual { display: none; }
+  .features { padding: 4rem 1.5rem; }
+  .providers { padding: 4rem 1.5rem; }
+  .how { padding: 4rem 1.5rem; }
+  .cta-section { padding: 4rem 1.5rem; }
+  footer { padding: 2rem 1.5rem; }
+  .steps-row::before { display: none; }
+  .trust-divider { display: none; }
+}
+
+/* ── ENTRANCE ANIMATIONS ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV ════ -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="logo-dot"></div>
+    Stream<span>Vault</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#providers">Providers</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://wa.me/212784820660" class="nav-cta" rel="nofollow noopener" target="_blank">Free Trial</a></li>
+  </ul>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <div class="channel-thumb featured live"><div class="ch-icon">▶</div></div>
+      <div class="channel-thumb live"><div class="ch-icon">📺</div></div>
+      <div class="channel-thumb"><div class="ch-icon">🎬</div></div>
+      <div class="channel-thumb live"><div class="ch-icon">⚽</div></div>
+      <div class="channel-thumb"><div class="ch-icon">🎵</div></div>
+      <div class="channel-thumb live"><div class="ch-icon">📡</div></div>
+      <div class="channel-thumb"><div class="ch-icon">🏆</div></div>
+      <div class="channel-thumb live"><div class="ch-icon">🎭</div></div>
+      <div class="channel-thumb"><div class="ch-icon">📰</div></div>
+      <div class="channel-thumb live"><div class="ch-icon">🎯</div></div>
+    </div>
+  </div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">IPTV Free Trial 2026 — USA · Canada · UK</span>
+    </div>
+
+    <h1 class="hero-title">
+      Premium<br/>
+      <em>Streaming</em>
+      <span class="outline-text">Redefined</span>
+    </h1>
+
+    <p class="hero-sub">
+      <strong>30,000+ live channels. 4K UHD. Zero buffering.</strong>
+      Test the best IPTV service in the USA completely free — no credit card, no commitment. Your cable bill ends today.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/212784820660" class="btn-primary" rel="nofollow noopener" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Start Free Trial
+      </a>
+      <a href="#how" class="btn-secondary">
+        <div class="play-icon">
+          <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg>
+        </div>
+        See how it works
+      </a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="trust-num">30K+</div>
+        <div class="trust-label">Live Channels</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num">4K</div>
+        <div class="trust-label">UHD Quality</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num">48H</div>
+        <div class="trust-label">Free Trial</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num">99.9%</div>
+        <div class="trust-label">Uptime</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ════ TICKER ════ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="ticker-dot"></span>NFL · NBA · NHL · UFC</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>30,000+ Live Channels</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>150,000+ Movies &amp; Series</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>4K UHD Streaming</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Firestick · Smart TV · iOS · Android</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>No Credit Card Required</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>24/7 Customer Support</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>USA · Canada · UK · Worldwide</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>NFL · NBA · NHL · UFC</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>30,000+ Live Channels</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>150,000+ Movies &amp; Series</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>4K UHD Streaming</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Firestick · Smart TV · iOS · Android</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>No Credit Card Required</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>24/7 Customer Support</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>USA · Canada · UK · Worldwide</span>
+  </div>
+</div>
+
+<!-- ════ FEATURES ════ -->
+<section class="features fade-up">
+  <div class="section-label">
+    <div class="section-label-line"></div>
+    <span class="section-label-text">Why StreamVault</span>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.9L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+      </div>
+      <div class="feature-title">4K Ultra HD</div>
+      <div class="feature-desc">HEVC H.265 encoding. Crystal-clear picture on every channel, even during peak hours.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="feature-title">Zero Buffering</div>
+      <div class="feature-desc">Anti-Freeze 9.8 technology. 99.9% uptime across US, Canada, and UK servers.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="feature-title">All Devices</div>
+      <div class="feature-desc">Firestick, Android TV, Smart TV, iPhone, iPad, PC — all covered with one subscription.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="feature-title">Built-in VPN</div>
+      <div class="feature-desc">Privacy protection included on select plans. Stop ISP throttling. Stream with confidence.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="feature-title">5 Connections</div>
+      <div class="feature-desc">Stream on up to 5 devices simultaneously. Everyone in the house watches what they want.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      </div>
+      <div class="feature-title">EPG + Catch-up</div>
+      <div class="feature-desc">Full Electronic Program Guide and 4-day catch-up TV. Never miss a game or show again.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PROVIDERS ════ -->
+<section class="providers fade-up" id="providers">
+  <div class="section-header">
+    <h2 class="section-title">Top <span>Providers</span><br/>Free Trial 2026</h2>
+    <a href="#" class="section-link">View all providers →</a>
+  </div>
+
+  <div class="providers-grid">
+
+    <div class="provider-card top">
+      <div class="card-rank">01</div>
+      <div class="card-badge badge-top">Editor's Pick</div>
+      <div class="card-name">EagleCast TV</div>
+      <div class="card-tagline">Longest free trial in the USA market</div>
+      <div class="card-stats">
+        <span class="stat"><strong>22,000+</strong> Channels</span>
+        <span class="stat"><strong>150K+</strong> VOD</span>
+        <span class="stat"><strong>4K UHD</strong></span>
+        <span class="stat"><strong>USA/CA/UK</strong></span>
+      </div>
+      <div class="card-trial">
+        <div>
+          <div class="trial-info">48-Hour Free Trial</div>
+          <div class="trial-sub">No credit card · Activated in minutes</div>
+        </div>
+        <a href="https://wa.me/212784820660" class="card-btn" rel="nofollow noopener" target="_blank">Start Trial</a>
+      </div>
+    </div>
+
+    <div class="provider-card">
+      <div class="card-rank">02</div>
+      <div class="card-badge badge-vpn">Built-in VPN</div>
+      <div class="card-name">Marinios IPTV</div>
+      <div class="card-tagline">Best privacy + peak-hour stability</div>
+      <div class="card-stats">
+        <span class="stat"><strong>30,000+</strong> Channels</span>
+        <span class="stat"><strong>4K UHD</strong></span>
+        <span class="stat"><strong>99.9%</strong> Uptime</span>
+        <span class="stat"><strong>VPN Included</strong></span>
+      </div>
+      <div class="card-trial">
+        <div>
+          <div class="trial-info">24-Hour Free Trial</div>
+          <div class="trial-sub">Via WhatsApp · No CC required</div>
+        </div>
+        <a href="https://wa.me/212784820660" class="card-btn" rel="nofollow noopener" target="_blank">Start Trial</a>
+      </div>
+    </div>
+
+    <div class="provider-card">
+      <div class="card-rank">03</div>
+      <div class="card-badge badge-value">Best Value</div>
+      <div class="card-name">Flash 4K IPTV</div>
+      <div class="card-tagline">Superior 4K HEVC picture quality</div>
+      <div class="card-stats">
+        <span class="stat"><strong>18,000+</strong> Channels</span>
+        <span class="stat"><strong>150K+</strong> VOD</span>
+        <span class="stat"><strong>HEVC</strong> 4K</span>
+        <span class="stat"><strong>PPV</strong> Included</span>
+      </div>
+      <div class="card-trial">
+        <div>
+          <div class="trial-info">36-Hour Free Trial</div>
+          <div class="trial-sub">No credit card required</div>
+        </div>
+        <a href="https://wa.me/212784820660" class="card-btn" rel="nofollow noopener" target="_blank">Start Trial</a>
+      </div>
+    </div>
+
+    <div class="provider-card">
+      <div class="card-rank">04</div>
+      <div class="card-badge badge-value">Sports Focus</div>
+      <div class="card-name">Xtreme HD IPTV</div>
+      <div class="card-tagline">Proven USA &amp; UK sports reliability</div>
+      <div class="card-stats">
+        <span class="stat"><strong>20,000+</strong> Channels</span>
+        <span class="stat"><strong>NFL · NBA · UFC</strong></span>
+        <span class="stat"><strong>4K UHD</strong></span>
+        <span class="stat"><strong>5 Screens</strong></span>
+      </div>
+      <div class="card-trial">
+        <div>
+          <div class="trial-info">24-Hour Free Trial</div>
+          <div class="trial-sub">No credit card required</div>
+        </div>
+        <a href="https://wa.me/212784820660" class="card-btn" rel="nofollow noopener" target="_blank">Start Trial</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ HOW IT WORKS ════ -->
+<section class="how fade-up" id="how">
+  <div class="section-label">
+    <div class="section-label-line"></div>
+    <span class="section-label-text">Get Started in 3 Steps</span>
+  </div>
+  <h2 class="section-title" style="margin-bottom:3rem">How It <span style="color:var(--red)">Works</span></h2>
+
+  <div class="steps-row">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Message Us</div>
+      <div class="step-desc">Send a WhatsApp message to request your free trial. No forms, no credit card. Just a message.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Get Credentials</div>
+      <div class="step-desc">Receive your login details within minutes. Works on Firestick, Smart TV, iOS, Android, and PC.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Start Streaming</div>
+      <div class="step-desc">Open IPTV Smarters or TiviMate, enter your credentials, and enjoy 30,000+ channels instantly.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Subscribe &amp; Save</div>
+      <div class="step-desc">Love it? Subscribe from $10/month — no contract, cancel anytime. Cut your cable bill today.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="cta-section fade-up">
+  <div class="cta-bg-glow"></div>
+  <div class="cta-eyebrow">Limited Trial Slots Available</div>
+  <h2 class="cta-title">Your Cable Bill<br/><span>Ends Today</span></h2>
+  <p class="cta-sub">Start your free IPTV trial right now. No credit card. No commitment. Just the best streaming experience you've ever had.</p>
+
+  <div class="cta-btns">
+    <a href="https://wa.me/212784820660" class="btn-primary" style="font-size:1rem;padding:16px 36px;" rel="nofollow noopener" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Get Free Trial via WhatsApp
+    </a>
+    <a href="https://wa.me/212784820660" class="btn-wa" rel="nofollow noopener" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+
+  <p class="cta-note"><span>No credit card required</span> · Trial activated within minutes · <span>Cancel anytime</span></p>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-logo">Stream<span>Vault</span></div>
+  <div class="footer-text">© 2026 StreamVault · Premium IPTV Service · USA · Canada · UK</div>
+  <div class="footer-text">Replace "StreamVault" with your brand name before publishing</div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
